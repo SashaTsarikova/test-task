@@ -38,15 +38,20 @@ class IndexedMap {
   }
 }
 
-// let collec = new IndexedMap();
-// collec.set('name', 'sasha');
-// collec.set('age', 24);
-// collec.set('know', 'JS');
+//пример создания и наполнения колекции
 
-// console.log(collec.size());
-// console.log(collec.has('name'))
-// console.log(collec.has('falseValue'))
-// console.log(collec.get('name'))
-// console.log(collec.get('falseValue'));
-// console.log(collec.remove('age'));
-// console.log(collec);
+// let collection = new IndexedMap();
+// collection.set('name', 'sasha');
+// collection.set('age', 24);
+// collection.set('know', 'JS');
+
+
+//примеры использования базовых методов колекции
+
+// console.log(collection.size());
+// console.log(collection.has('name'))
+// console.log(collection.has('falseValue'))
+// console.log(collection.get('name'))
+// console.log(collection.get('falseValue'));
+// console.log(collection.remove('age'));
+// console.log(collection);

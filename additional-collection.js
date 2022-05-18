@@ -41,6 +41,7 @@ class IndexedMap {
     return null;
   }
 
+
   union(...maps) {
     let currentCollection = this.collection;
     this.collection = maps.reduce((a,b) => a.concat(b.collection), currentCollection);
@@ -63,8 +64,7 @@ class IndexedMap {
     return this.collection.sort(callback);
   }
 
-  //не поняла техники работы метода
-
+  //не поняла техники работы метода. В моем варианте он принимает callback типа (a,b)=> a-b, только применяет его для индексов
   sortIndexes(callback) {
     const indexesArr = Object.values(this.collection).map((el, index) => index);
     const newIndexedArr = indexesArr.sort(callback);
@@ -80,6 +80,8 @@ class IndexedMap {
     return returnArr;
   }
     
+  // формулировку "добавить после индекса" поняла как "поменять значение в элементе по индексу, 
+  // т.к. в противном случае в аргументах должен быть ключ, а в примере его нет"
   setTo(index, value) {
     this.collection[index].value = value;
   }
@@ -89,26 +91,30 @@ class IndexedMap {
   }
 }
 
-let collec = new IndexedMap();
-collec.set('name', 'sasha');
-collec.set('age', 24);
-collec.set('know', 'JS');
 
-let collec2 = new IndexedMap();
-collec2.set('name', 'vika');
-collec2.set('age', 28);
-collec2.set('know', 'JS');
+// let collec = new IndexedMap();
+// collec.set('name', 'sasha');
+// collec.set('age', 24);
+// collec.set('know', 'JS');
 
-collec2.set('name', 'Vova');
-collec2.set('age', 29);
-collec2.set('know', 'Angular');
+// let collec2 = new IndexedMap();
+// collec2.set('name', 'Vika');
+// collec2.set('age', 28);
+// collec2.set('know', 'JS');
+// collec2.set('name', 'Vova');
+// collec2.set('gender', 'M');
+// collec2.set('know', 'Angular');
 
-collec.union(collec2)
+
+// примеры использования дополнительных методов колллекции
+
+// collec.union(collec2)
 // console.log(collec);
+
 // console.log(collec.unique());
+
 // console.log(collec.sort((a) => {
 //   if (a.key === "age") return -1;
-//   if (a.key === "name") return 0;
 //   else { return 1}
 // }));
 
